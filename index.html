@@ -6,6 +6,16 @@
         <title>个人作品集©copyright 2022</title>   
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <style>
+            /*滚动条宽度*/
+        ::-webkit-scrollbar{width: 0px;
+                            height: 5px;}
+            /*滚动条按钮样式*/
+        ::-webkit-scrollbar-thumb{border-radius: 10px;
+                                  background-color: #f1f1f1;}
+            /*滚动条背景样式*/
+        ::-webkit-scrollbar-track{border-radius: 10px;}
+
+
         body{background-color: white;
             font-family: roboto, sans-serif;
             font-style: normal;
@@ -22,7 +32,7 @@
                 cursor: crosshair;}
             h1{text-align: left;
                 margin: 0 auto;
-                margin-top:-80px;
+                margin-top:-100px;
                 background-color:white;
                 color:gray;
                 z-index:100;
@@ -32,19 +42,19 @@
 
                 .wb1{position:fixed;
                     width:100vw;
-                    height:30px;
+                    height:60px;
                     margin: 0 auto;
                     z-index:75px;
-                    margin-top:-80px;
+                    margin-top:-120px;
                     background-color:white;}
 
                 .wb2{position:fixed;
-                    width:27vw;
+                    width:25vw;
                     height:194px;
                     margin: 0 auto;
                     z-index:75px;
                     margin-top:-50px;
-                    background-color:white;}
+                    background-color:transparent;}
 
                 .bar1{margin-top:-24px;
                     width:103px;
@@ -55,8 +65,8 @@
                     position:fixed;}
 
                 .darkmode{
-                    margin-top:-78.5px;
-                    margin-left:-34px;
+                    margin-top:-97.5px;
+                    margin-left:-41px;
                     width: 20px;
                     height: 20px;
                     border: 4px solid gray;
@@ -67,8 +77,8 @@
                     border-radius: 50%;
                     position:fixed;}
                 .lightmode{
-                    margin-top:-78.5px;
-                    margin-left:-34px;
+                    margin-top:-97.5px;
+                    margin-left:-41px;
                     width: 20px;
                     height: 20px;
                     border: 4px solid black;
@@ -81,48 +91,92 @@
                 
             .menu{width:20%;
                 position:fixed;
-                margin-top:40px;
+                margin-top:-60px;
                 height:104px;
                 margin-left:0px;
                 font-size:14px;
                 z-index:50;
-                background-color:white;}
+                background-color:transparent;}
+            .image{width:60vw;
+            margin-left:25vw;
+            z-index:25;}
+            img{width:60vw;
+            margin-top:20px;}
 
-            div{margin-top:20px;
+            div{margin-top:120px;
                 margin-left:87px;}
                 
                 .about{margin-top:-50px;
+                    z-index:100;
                     cursor: crosshair;}
                 .contact{margin-top:50px;
+                    z-index:100;
                     cursor: crosshair;}
                 .works{margin-top:50px;
+                    z-index:100;
                     cursor: crosshair;}
                 .toggle{display:none;
                     cursor: crosshair;
-                    margin-top:120px;
+                    height: 500px;
                     z-index:50;}
                 .scroll{
-                    margin-top:120px;
-                    z-index:50;}
-                .collectivecare{margin-top:50px;
+                    margin-top:50px;
+                    z-index:25;
+                position:fixed;}
+                .collectivecare{margin-top:0px;
                     margin-left:0px;
                     width:150px;
                     font-size:14px;
                     cursor: crosshair;}
-                .observation,.GérardUféras,.knoll,.the24solarterms,.newphotography,.generateposters,.soundmotion,.tiquette,.theviciousofcity,.thewoodwhisperper,.drawings{margin-top:10px;
+                .interview,.GérardUféras,.knoll,.the24solarterms,.newphotography,.generateposters,.soundmotion,.tiquette,.theviciousofcity,.thewoodwhisperper,.drawings,.process{margin-top:10px;
                     margin-left:0px;
                     width:150px;
                     font-size:14px;
                     cursor: crosshair;}
+            
+            
+            @media screen and (max-width:1366px){
+                .darkmode{margin-left:-24px;}
+                .lightmode{margin-left:-24px;}
+                h1{margin-left:15px;}
+                .image{margin-left:20vw;}
+                .wb2{margin-left:-68px;}
+                .menu{margin-left:-66px;}
+                .scroll{margin-left:-66px;}
+            }
 
+            @media screen and (max-width:1180px){
+                .image{margin-left:25vw;}
+                
+            }
 
-            .on{background-color:black;
-                color:white;
-                opacity: 0.85;}
+            @media screen and (max-width:796px){
+                .image{margin-left:5px;
+                min-width:250px;}
+                
+            }
 
-            .off{background-color:white;
-                color:black;
-                opacity: 1;}
+            @media screen and (max-height:624px){
+                .darkmode{margin-top:-100.5px;}
+                .lightmode{margin-top:-100.5px;}
+                h1{margin-top:-102px;}
+                .wb1{margin-top:-122px;}
+                .wb2{margin-top:-94px;}
+                .bar1{margin-top:-57px;}
+                .menu{margin-top:-70px;}
+                img{margin-top:10px;}
+                div{margin-top:110px;}
+                .about{margin-top:-76px;}
+                .contact{margin-top:18px;}
+                .works{margin-top:16px}
+                .scroll{margin-top:-46px;}
+                .collectivecare{margin-top:-3px;}
+                
+            }
+
+            @media screen and (max-height:564px){
+                .toggle{height:440px;}
+            }
             
         </style> 
 
@@ -169,7 +223,17 @@
                     $(".contact").css('color','black');
                     $(".works").css('color','black');
                 });
+                $( ".about" ).click(function() {
+                    $(".about").css('color','gray');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
                 $( ".contact" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','gray');
+                    $(".works").css('color','black');
+                });
+                $( ".contact" ).click(function() {
                     $(".about").css('color','black');
                     $(".contact").css('color','gray');
                     $(".works").css('color','black');
@@ -189,7 +253,7 @@
                     $(".contact").css('color','black');
                     $(".works").css('color','black');
                 });
-                $( ".observation" ).hover(function() {
+                $( ".interview" ).hover(function() {
                     $(".about").css('color','black');
                     $(".contact").css('color','black');
                     $(".works").css('color','black');
@@ -239,6 +303,11 @@
                     $(".contact").css('color','black');
                     $(".works").css('color','black');
                 });
+                $( ".process" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
              
             });
         </script>
@@ -252,6 +321,10 @@
     <section class="wb2"></section>
         <div class="darkmode"></div>
         <div class="lightmode"></div>
+    
+        
+
+
     <section class="menu">
         <div></div>
         <div class="about"><b>ABOUT</b></div>
@@ -259,9 +332,9 @@
         <div class="works"><b>WORKS</b></div>
     </section>
     <section class="scroll">
-        <div class="toggle">
+        <div class="toggle" style="overflow: scroll">
             <div class="collectivecare"><a href="collectivecare.html">COLLECTIVE CARE</a></div>
-            <div class="observation"><a href="observation.html">THE OBSERVATION OF FORM & PATTERN</a></div>
+            <div class="interview"><a href="interview.html">THE OBSERVATION OF FORM & PATTERN</a></div>
             <div class="GérardUféras"><a href="GérardUféras.html">GERARD UFERAS</a></div>
             <div class="knoll"><a href="knoll.html">KNOLL</a></div>
             <div class="the24solarterms"><a href="the24solarterms.html">THE 24 SOLAR TERMS</a></div>
@@ -272,13 +345,32 @@
             <div class="theviciousofcity"><a href="theviciousofcity.html">THE VICIOUS OF CITY</a></div>
             <div class="thewoodwhisperper"><a href="thewoodwhisperper.html">THE WOODWHISPERER</a></div>
             <div class="drawings"><a href="drawings.html">DRAWINGS</a></div>
+            <div class="process"><a href="process.html">PROCESS</a></div>
             <div></div>
         </div>
+    </section>
+    
+    <section class="image">
+        <div></div>
+        <a href="collectivecare.html"><img src="image/A2.jpg"></a>
+        <img src="image/interview.jpg">
+        <img src="image/GérardUféras.jpg">
+        <img src="image/mockup.jpg">
+        <img src="image/the24solarterms.jpg">
+        <img src="image/blue.jpg">
+        <img src="image/blue.jpg">
+        <img src="image/motion.jpg">
+        <img src="image/blue.jpg">
+        <img src="image/city.jpg">
+        <img src="image/wood.png">
+        <img src="image/drawing01.jpg">
+        <img src="image/Untitled presentation (4).jpg">   
     </section>
 
     </body>
 </html>
 
 <!--<a name="link"></a>
-    <a href="#"></a>内置超链接--
-    Gérard Uféras>
+    <a href="#"></a>内置超链接
+1180width
+264height-->
