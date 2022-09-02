@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"><!--charset: character encoding capable of encoding all characters on the web  -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--for browser compatibility: choose rendering engine to view the page in an correct view (for old ver. IE)  -->
+        <title>个人作品集©copyright 2022</title>   
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <style>
+        body{background-color: white;
+            font-family: roboto, sans-serif;
+            font-style: normal;
+            width:80vw;
+            margin-left:10vw;}
+            a:link{color: gray;
+                text-decoration:none;
+                cursor: crosshair;}
+            a:hover{color: black;
+                text-decoration:underline;
+                cursor: crosshair;}
+            a:visited{color: gray;
+                text-decoration:none;
+                cursor: crosshair;}
+            h1{text-align: left;
+                margin: 0 auto;
+                margin-top:-80px;
+                background-color:white;
+                color:gray;
+                z-index:100;
+                position:fixed;
+                padding-top: 0.5vh;
+                font-size: 15px;}
+
+                .wb1{position:fixed;
+                    width:100vw;
+                    height:30px;
+                    margin: 0 auto;
+                    z-index:75px;
+                    margin-top:-80px;
+                    background-color:white;}
+
+                .wb2{position:fixed;
+                    width:27vw;
+                    height:194px;
+                    margin: 0 auto;
+                    z-index:75px;
+                    margin-top:-50px;
+                    background-color:white;}
+
+                .bar1{margin-top:-24px;
+                    width:103px;
+                    height:3px;
+                    margin-left:20px;
+                    background-color:rgb(124, 35, 35);
+                    z-index:100;
+                    position:fixed;}
+
+                .darkmode{
+                    margin-top:-78.5px;
+                    margin-left:-34px;
+                    width: 20px;
+                    height: 20px;
+                    border: 4px solid gray;
+                    background-color:white;
+                    -webkit-mask: linear-gradient(to bottom, gray, transparent );
+                    display:inline-block;
+                    z-index:150;
+                    border-radius: 50%;
+                    position:fixed;}
+                .lightmode{
+                    margin-top:-78.5px;
+                    margin-left:-34px;
+                    width: 20px;
+                    height: 20px;
+                    border: 4px solid black;
+                    background-color:white;
+                    -webkit-mask: linear-gradient(to bottom, gray, transparent );
+                    display:none;
+                    z-index:150;
+                    border-radius: 50%;
+                    position:fixed;}
+                
+            .menu{width:20%;
+                position:fixed;
+                margin-top:40px;
+                height:104px;
+                margin-left:0px;
+                font-size:14px;
+                z-index:50;
+                background-color:white;}
+
+            div{margin-top:20px;
+                margin-left:87px;}
+                
+                .about{margin-top:-50px;
+                    cursor: crosshair;}
+                .contact{margin-top:50px;
+                    cursor: crosshair;}
+                .works{margin-top:50px;
+                    cursor: crosshair;}
+                .toggle{display:none;
+                    cursor: crosshair;
+                    margin-top:120px;
+                    z-index:50;}
+                .scroll{
+                    margin-top:120px;
+                    z-index:50;}
+                .collectivecare{margin-top:50px;
+                    margin-left:0px;
+                    width:150px;
+                    font-size:14px;
+                    cursor: crosshair;}
+                .observation,.GérardUféras,.knoll,.the24solarterms,.newphotography,.generateposters,.soundmotion,.tiquette,.theviciousofcity,.thewoodwhisperper,.drawings{margin-top:10px;
+                    margin-left:0px;
+                    width:150px;
+                    font-size:14px;
+                    cursor: crosshair;}
+
+
+            .on{background-color:black;
+                color:white;
+                opacity: 0.85;}
+
+            .off{background-color:white;
+                color:black;
+                opacity: 1;}
+            
+        </style> 
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script language="javascript">
+            $(document).ready(function(){
+                $( ".darkmode" ).click(function() {
+                    $("body").css('background-color','black');
+                    $("body").css('color','white');
+                    $("body").css('opacity','0.85');
+                    $(".darkmode").css('display','none');
+                    $(".lightmode").css('display','inline-block');
+                    $("h1").css('background-color','black');
+                    $("h1").css('color','white');
+                    $(".wb1").css('background-color','black');
+                    $(".wb2").css('background-color','black');
+                    $(".menu").css('background-color','black');
+                    $(".about").css('color','white');
+                    $(".contact").css('color','white');
+                    $(".works").css('color','white');
+                });
+                $( ".lightmode" ).click(function() {
+                    $("body").css('background-color','white');
+                    $("body").css('color','black');
+                    $("body").css('opacity','1');
+                    $(".darkmode").css('display','inline-block');
+                    $(".lightmode").css('display','none');
+                    $("h1").css('background-color','white');
+                    $("h1").css('color','gray');
+                    $(".wb1").css('background-color','white');
+                    $(".wb2").css('background-color','white');
+                    $(".menu").css('background-color','white');
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                
+                $( ".works" ).click(function() {
+                    $(".toggle").css('display','inline-block');
+                    $(".works").css('color','black');
+                });
+                $( ".about" ).hover(function() {
+                    $(".about").css('color','gray');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".contact" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','gray');
+                    $(".works").css('color','black');
+                });
+                $( ".works" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','gray');
+                });
+                $( ".works" ).click(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".collectivecare" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".observation" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".GérardUféras" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".knoll" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".the24solarterms" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".newphotography" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".generateposters" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".soundmotion" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".tiquette" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".theviciousofcity" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+                $( ".drawings" ).hover(function() {
+                    $(".about").css('color','black');
+                    $(".contact").css('color','black');
+                    $(".works").css('color','black');
+                });
+             
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <h1>个人作品集©copyright 2022</h1>
+        <div class="bar1"></div>
+    <section class="wb1"></section>
+    <section class="wb2"></section>
+        <div class="darkmode"></div>
+        <div class="lightmode"></div>
+    <section class="menu">
+        <div></div>
+        <div class="about"><b>ABOUT</b></div>
+        <div class="contact"><b>CONTACT</b></div>
+        <div class="works"><b>WORKS</b></div>
+    </section>
+    <section class="scroll">
+        <div class="toggle">
+            <div class="collectivecare"><a href="collectivecare.html">COLLECTIVE CARE</a></div>
+            <div class="observation"><a href="observation.html">THE OBSERVATION OF FORM & PATTERN</a></div>
+            <div class="GérardUféras"><a href="GérardUféras.html">GERARD UFERAS</a></div>
+            <div class="knoll"><a href="knoll.html">KNOLL</a></div>
+            <div class="the24solarterms"><a href="the24solarterms.html">THE 24 SOLAR TERMS</a></div>
+            <div class="newphotography"><a href="newphotography.html">NEW PHOTOGRAPHY</a></div>
+            <div class="generateposters"><a href="generateposters.html">GENERATE POSTERS</a></div>
+            <div class="soundmotion"><a href="soundmotion.html">SOUND MOTION</a></div>
+            <div class="tiquette"><a href="tiquette.html">TIQUETTE</a></div>
+            <div class="theviciousofcity"><a href="theviciousofcity.html">THE VICIOUS OF CITY</a></div>
+            <div class="thewoodwhisperper"><a href="thewoodwhisperper.html">THE WOODWHISPERER</a></div>
+            <div class="drawings"><a href="drawings.html">DRAWINGS</a></div>
+            <div></div>
+        </div>
+    </section>
+
+    </body>
+</html>
+
+<!--<a name="link"></a>
+    <a href="#"></a>内置超链接--
+    Gérard Uféras>
