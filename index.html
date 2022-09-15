@@ -20,7 +20,8 @@
             font-family: roboto, sans-serif;
             font-style: normal;
             width:80vw;
-            margin-left:10vw;}
+            margin-left:10vw;
+        cursor:default;}
             a:link{color: gray;
                 text-decoration:none;
                 cursor: crosshair;}
@@ -64,7 +65,7 @@
                     z-index:100;
                     position:fixed;}
 
-                .darkmode{
+                .logo{
                     margin-top:-97.5px;
                     margin-left:-41px;
                     width: 20px;
@@ -76,18 +77,7 @@
                     z-index:500;
                     border-radius: 50%;
                     position:fixed;}
-                .lightmode{
-                    margin-top:-97.5px;
-                    margin-left:-41px;
-                    width: 20px;
-                    height: 20px;
-                    border: 4px solid black;
-                    background-color:white;
-                    -webkit-mask: linear-gradient(to bottom, gray, transparent );
-                    display:none;
-                    z-index:500;
-                    border-radius: 50%;
-                    position:fixed;}
+                
                 
             .menu{width:20%;
                 position:fixed;
@@ -104,6 +94,22 @@
                 margin-left:16vw;
                 font-size:14px;
                 z-index:200;}
+
+            .aboutinfo1{
+                display:none;
+                position:fixed;
+                margin-top:-61px;
+                margin-left:38vw;
+                font-size:14px;
+                z-index:200;
+            max-width:30vw;}
+            span{font-weight:600;
+                color:rgb(124, 35, 35);}
+
+            
+                .info2{
+                cursor: crosshair;
+                height: 458px;}
 
 
 
@@ -139,11 +145,13 @@
                     margin-left:0px;
                     width:150px;
                     font-size:14px;
+                    z-index:1000;
                     cursor: crosshair;}
                 .interview,.GérardUféras,.knoll,.the24solarterms,.newphotography,.generateposters,.soundmotion,.tiquette,.theviciousofcity,.thewoodwhisperper,.drawings,.process{margin-top:10px;
                     margin-left:0px;
                     width:150px;
                     font-size:14px;
+                    z-index:500;
                     cursor: crosshair;}
 
 
@@ -157,11 +165,17 @@
                 .wb2{margin-left:-68px;}
                 .menu{margin-left:-66px;}
                 .scroll{margin-left:-66px;}
+                .aboutinfo1{min-width:400px;}
 
             }
 
             @media screen and (max-width:1180px){
                 .image{margin-left:25vw;}
+                .contactinfo,.aboutinfo{margin-top:-112px;
+                margin-left:16vw;}
+                .aboutinfo1{margin-top: 85px;
+                    margin-left: 16vw;}
+
                 
             }
 
@@ -186,16 +200,25 @@
                 div{margin-top:110px;}
                 .about{margin-top:-76px;}
                 .contact{margin-top:18px;}
-                .works{margin-top:16px}
+                .works{margin-top:18px}
                 .scroll{margin-top:-46px;}
                 .collectivecare{margin-top:-3px;}
-                
+                .contactinfo{margin-top:-112px;
+                margin-left:16vw;}
+                .aboutinfo{margin-top:-150px;
+                margin-left:16vw;}
+                .aboutinfo1{margin-top: 47px;
+                    margin-left: 16vw;}    
+                .info2{height: 289px;
+                    margin-top: 116px;}
+                    
+                  
             }
 
             @media screen and (max-height:564px){
-                .toggle{height:440px;}
-                .contactinfo{margin-top:-112px;
-                margin-left:16vw;}
+                .toggle{height:300px;}
+                
+                
             }
             
         </style> 
@@ -203,41 +226,8 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script language="javascript">
             $(document).ready(function(){
-                $( ".darkmode" ).click(function() {
-                    $("body").css('background-color','black');
-                    $("body").css('color','white');
-                    $("body").css('opacity','0.85');
-                    $(".darkmode").css('display','none');
-                    $(".lightmode").css('display','inline-block');
-                    $("h1").css('background-color','black');
-                    $("h1").css('color','white');
-                    $(".wb1").css('background-color','black');
-                    $(".wb2").css('background-color','black');
-                    $(".menu").css('background-color','black');
-                    $(".about").css('color','white');
-                    $(".contact").css('color','white');
-                    $(".works").css('color','white');
-                });
-                $( ".lightmode" ).click(function() {
-                    $("body").css('background-color','white');
-                    $("body").css('color','black');
-                    $("body").css('opacity','1');
-                    $(".darkmode").css('display','inline-block');
-                    $(".lightmode").css('display','none');
-                    $("h1").css('background-color','white');
-                    $("h1").css('color','gray');
-                    $(".wb1").css('background-color','white');
-                    $(".wb2").css('background-color','white');
-                    $(".menu").css('background-color','white');
-                    $(".about").css('color','black');
-                    $(".contact").css('color','black');
-                    $(".works").css('color','black');
-                });
                 
-                $( ".works" ).click(function() {
-                    $(".toggle").css('display','inline-block');
-                    $(".works").css('color','black');
-                });
+                
                 $( ".about" ).hover(function() {
                     $(".about").css('color','gray');
                     $(".contact").css('color','black');
@@ -249,7 +239,8 @@
                     $(".works").css('color','black');
                     $(".contactinfo").css('display','none');
                     $(".aboutinfo").css('display','inline-block');
-                    $("img").css('opacity','0.25');
+                    $(".aboutinfo1").css('display','inline-block');
+                    $("img").css('opacity','0.2');
                     
                 });
                 $( ".contact" ).hover(function() {
@@ -263,7 +254,8 @@
                     $(".works").css('color','black');
                     $(".contactinfo").css('display','inline-block');
                     $(".aboutinfo").css('display','none');
-                    $("img").css('opacity','0.25');
+                    $(".aboutinfo1").css('display','none');
+                    $("img").css('opacity','0.2');
                 });
                 $( ".works" ).hover(function() {
                     $(".about").css('color','black');
@@ -276,7 +268,9 @@
                     $(".works").css('color','black');
                     $(".contactinfo").css('display','none');
                     $(".aboutinfo").css('display','none');
+                    $(".aboutinfo1").css('display','none');
                     $("img").css('opacity','1');
+                    $(".toggle").css('display','inline-block');
                     
                 });
                 $( ".collectivecare" ).hover(function() {
@@ -356,8 +350,7 @@
         <div class="bar1"></div>
     <section class="wb1"></section>
     <section class="wb2"></section>
-        <div class="darkmode"></div>
-        <div class="lightmode"></div>
+    <a href="#home"><div class="logo"><a name="home"></a></div></a>
     
         
 
@@ -391,17 +384,54 @@
     <section class="aboutinfo">
         <div class="info1">
             <h3>技能特长</h3>
-            <p>设计 | Print and digital design; 
+            <p><span>设计</span> | Print and digital design; 
             <br> &emsp;&emsp;&ensp;&thinsp; Adobe InDesign, 
             <br> &emsp;&emsp;&ensp;&thinsp; Illustrator, Photoshop;
             <br> &emsp;&emsp;&ensp;&thinsp; After Effect, Premiere; 
             <br> &emsp;&emsp;&ensp;&thinsp; Figma, Adobe XD;
             <br> &emsp;&emsp;&ensp;&thinsp; Cinema 4 D;
-            <br> &emsp;&emsp;&ensp;&thinsp; HTML/CSS/Javascript</p>
-            <p>语言 | English, Mandarin</p>
+            <br> &emsp;&emsp;&ensp;&thinsp; HTML/CSS/Javascript
+            <p><span>语言</span> | English, Mandarin</p>
         </div>
+    </section>
 
-        <div class="info2">
+
+    <section class="aboutinfo1">
+        <div class="info2" style="overflow: scroll">
+            <h3>教育背景</h3>
+            <p><span>罗德岛艺术设计学院 (RISD)</span>
+            <br> Providence, RI | Sept. 2018–
+            <br> 本科, 平面设计</p>
+            <p><span>布朗大学</span>
+            <br> Providence, RI | Sept. 2019–May. 2020 
+            <br> 人机交互/用户体验, 经济</p>
+
+            <h3>参与展出</h3>
+            <p><span>IB 艺术展 | 小组展示 | Mar. </span>2018 
+            <br> 人大附中国际部一层展厅</p>
+            <p><span>Coming To(o)|小组展示|Dec. </span>2018 
+            <br> RISD Red Eye Gallery</p>
+
+
+            <h3>课程</h3>
+            <p><span>Design Studio I | </span>Step. 2018–Dec. 2018 
+            <br>这是我最初接触平面设计的课程，通过尝试不同的设计程序和设计风格，
+                我意识到设计本身并不局限于表现手法或者用户需求，更多的是对自我的探寻以及风格背后的含义。
+            </p>
+
+            <p><span>Typography III | </span>Step. 2020–Dec. 2020 
+            <br>我学会了设计字体并将字体本身当作设计元素来使用，以及使用
+                Figma以及AbobeXD来转换自己的设计至多媒体形态，比如网站元素和GIF动效。
+            </p>
+            
+
+            <p><span>Web Design | </span>Step. 2021–Dec. 2021
+            <br>在这门课程中，我学会了基本的编程代码以及如何将自己的设计转化为网站。
+                网站和其他设计最大的不同在于它对互动的需求，以及使用方式的定义。
+                而通过这节课我对设计本身有了更好地理解，那便是为谁服务，以及通过什么样的形态。
+                </p>
+
+
 
         </div>    
     </section>
